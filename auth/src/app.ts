@@ -2,13 +2,13 @@ import express from "express";
 import "express-async-errors";
 
 import { json } from "body-parser";
+import { errorHandlers, NotFoundError } from "@sandiprg/common";
+import cookieSession from "cookie-session";
+
 import { currentUserRouter } from "./routes/current-user";
 import { signinRouter } from "./routes/signin";
 import { signoutRouter } from "./routes/signout";
 import { signupRouter } from "./routes/signup";
-import { errorHandlers } from "./middlewares/error-handlers";
-import { NotFoundError } from "./errors/not-found-error";
-import cookieSession from "cookie-session";
 
 const app = express();
 app.set("trust proxy", true);
