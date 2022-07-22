@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 import { app } from "./app";
 
 const port = 3000;
-
 const start = async () => {
   if (!process.env.JWT_KEY) {
     throw new Error("JWT_KEY must be defined");
@@ -12,6 +11,7 @@ const start = async () => {
   }
   const mongoUrl = process.env.MONGO_URI;
   // const mongoUrl = "mongodb://admin:sandip@localhost:27017/auth";
+
   try {
     await mongoose.connect(mongoUrl);
     console.log("connected to mongodb");
